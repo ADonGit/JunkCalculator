@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  The primary Linear Layout, everything fits into here vertically   -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+
+    android:gravity="bottom"
+
+    android:orientation="vertical"
+    android:paddingBottom="6dp"
+    android:weightSum="2"
+
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/resultDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+
+        android:text=""
+        android:textColor="@color/LightGrey"
+        android:textSize="50sp"
+
+        android:maxLines="2"
+
+        app:autoSizeMaxTextSize="50sp"
+        app:autoSizeMinTextSize="24sp"
+        app:autoSizeStepGranularity="2sp"
+        app:autoSizeTextType="uniform"
+
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="52sp"/>
+
+    <!-- Advanced Row, invisible by default -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+
+        android:paddingBottom="8dp"
+        >
+
+
+        <!-- Mod Button -->
+        <Button
+            android:id="@+id/buttonMod"
+            style="@style/Theme.MaterialComponents"
+            android:layout_width="100sp"
+            android:layout_height="58sp"
+            android:fontFamily="sans-serif-light"
+
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+
+
+            android:text="%"
+            android:textSize="38sp"
+            app:cornerRadius="0dp"
+            app:strokeColor="@color/SlateGray"
+            app:strokeWidth="1dp" />
+
+        <!-- Pow Button -->
+        <Button
+            android:id="@+id/buttonPow"
+            style="@style/Theme.MaterialComponents"
+            android:layout_width="100sp"
+            android:layout_height="58sp"
+            android:fontFamily="sans-serif-light"
+
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+
+
+            android:text="POW"
+            android:textSize="28sp"
+            app:cornerRadius="0dp"
+            app:strokeColor="@color/SlateGray"
+            app:strokeWidth="1dp" />
+
+        <!-- Min Button -->
+        <Button
+            android:id="@+id/buttonMin"
+            style="@style/Theme.MaterialComponents"
+            android:layout_width="100sp"
+            android:layout_height="58sp"
+            android:fontFamily="sans-serif-light"
+
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+
+
+            android:text="MIN"
+            android:textSize="28sp"
+            app:cornerRadius="0dp"
+            app:strokeColor="@color/SlateGray"
+            app:strokeWidth="1dp" />
+
+        <!-- Max Button -->
+        <Button
+            android:id="@+id/buttonMax"
+            style="@style/Theme.MaterialComponents"
+            android:layout_width="100sp"
+            android:layout_height="58sp"
+            android:fontFamily="sans-serif-light"
+
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+
+
+            android:text="MAX"
+            android:textSize="28sp"
+            app:cornerRadius="0dp"
+            app:strokeColor="@color/SlateGray"
+            app:strokeWidth="1dp" />
+
+    </LinearLayout>
+
+    <!--  The Linear Layout for the keypad, 4 additional rows are placed vertically   -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:orientation="vertical"
+
+        android:paddingBottom="8dp"
+
+        >
+
+        <!-- The linear layout for the first row, horizontal -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Button 1 -->
+            <Button
+                android:id="@+id/button1"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+                android:fontFamily="sans-serif-light"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
+
+                android:text="@string/_1"
+                android:textSize="42sp"
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp" />
+
+
+            <!-- Button 2 -->
+            <Button
+                android:id="@+id/button2"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+                android:fontFamily="sans-serif-light"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
+                android:text="@string/_2"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+
+            <!-- Button 3 -->
+            <Button
+                android:id="@+id/button3"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+                android:fontFamily="sans-serif-light"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
+                android:text="@string/_3"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+            <!-- Button Plus -->
+            <Button
+                android:id="@+id/buttonPlus"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+                android:fontFamily="sans-serif-light"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
+                android:text="@string/_plus"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Button 4 -->
+            <Button
+                android:id="@+id/button4"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+
+                android:fontFamily="sans-serif-light"
+                android:insetTop="0dp"
+
+                android:insetBottom="0dp"
+                android:text="@string/_4"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+            <!-- Button 5 -->
+            <Button
+                android:id="@+id/button5"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+                android:fontFamily="sans-serif-light"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
+                android:text="@string/_5"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+            <!-- Button 6 -->
+            <Button
+                android:id="@+id/button6"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+                android:fontFamily="sans-serif-light"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
+                android:text="@string/_6"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+            <!-- Button Minus -->
+            <Button
+                android:id="@+id/buttonMinus"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+                android:fontFamily="sans-serif-light"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
+                android:text="@string/_minus"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Button 7 -->
+            <Button
+                android:id="@+id/button7"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+                android:fontFamily="sans-serif-light"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
+                android:text="@string/_7"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+            <!-- Button 8 -->
+            <Button
+                android:id="@+id/button8"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+                android:fontFamily="sans-serif-light"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
+                android:text="@string/_8"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+            <!-- Button 9 -->
+            <Button
+                android:id="@+id/button9"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+                android:fontFamily="sans-serif-light"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
+                android:text="@string/_9"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+            <!-- Button Multiply -->
+            <Button
+                android:id="@+id/buttonMultiply"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+                android:fontFamily="sans-serif-light"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
+                android:text="@string/_multiply"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Button Clear -->
+            <Button
+                android:id="@+id/buttonClear"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+
+                android:fontFamily="sans-serif-light"
+                android:insetTop="0dp"
+
+                android:insetBottom="0dp"
+                android:text="@string/_clear"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+            <!-- Button 0 -->
+            <Button
+                android:id="@+id/button0"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+
+                android:fontFamily="sans-serif-light"
+                android:insetTop="0dp"
+
+                android:insetBottom="0dp"
+                android:text="@string/_0"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+            <!-- Button Equals -->
+            <Button
+                android:id="@+id/buttonEquals"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+
+                android:fontFamily="sans-serif-light"
+                android:insetTop="0dp"
+
+                android:insetBottom="0dp"
+                android:text="@string/_equals"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+            <!-- Button Divide -->
+            <Button
+                android:id="@+id/buttonDivide"
+                style="@style/Theme.MaterialComponents"
+                android:layout_width="100sp"
+                android:layout_height="78sp"
+
+                android:fontFamily="sans-serif-light"
+                android:insetTop="0dp"
+
+                android:insetBottom="0dp"
+                android:text="@string/_divide"
+                android:textSize="42sp"
+
+                app:cornerRadius="0dp"
+                app:strokeColor="@color/SlateGray"
+                app:strokeWidth="1dp"
+
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:paddingBottom="8sp"
+        android:paddingLeft="5sp"
+        android:paddingRight="5sp"
+        >
+
+        <Button
+            android:id="@+id/buttonMode"
+
+            style="@style/Theme.MaterialComponents"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center"
+            android:orientation="horizontal"
+
+            android:fontFamily="sans-serif-light"
+
+            android:text="@string/_advanced_scientific"
+            android:textSize="32sp"
+
+            app:cornerRadius="0dp"
+            app:strokeColor="@color/SlateGray"
+            app:strokeWidth="1dp"
+
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
